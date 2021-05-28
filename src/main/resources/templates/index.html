@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 加入thymeleaf-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>form</title>
+</head>
+
+<body>
+	<h2>新增</h2>
+	<!--
+		th:action:定義後台控制器路徑，類似<form>標籤的action屬性。
+        th:object:將form內的資料打包一起送出
+        method:要與controller過來的方法一致
+	-->
+	<form th:action="@{/add}" th:object="${person}" method="get">
+		<input type="text" name="id" placeholder="請輸入id" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入id'"/>
+		<input type="text" name="name" />
+		<input type="text" name="phone" />
+		<input type="submit" />
+	</form>
+	
+		<h2>刪除</h2>
+	<form th:action="@{/delete}" th:object="${person}" method="get">
+		<input type="text" name="id" />
+		<input type="submit" />
+	</form>
+	
+	<h2>更改</h2>
+	<form th:action="@{/update}" th:object="${person}" method="get">
+		<input type="text" name="id" placeholder="請輸入id" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入id'"/>
+		<input type="text" name="name" />
+		<input type="text" name="phone" />
+		<input type="submit" />
+	</form>
+	
+	<h2>查</h2>
+	<form th:action="@{/update}" th:object="${person}" method="get">
+		<input type="text" name="id" placeholder="請輸入id" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入id'"/>
+		<input type="text" name="name" />
+		<input type="text" name="phone" />
+		<input type="submit" />
+	</form>
+	
+</body>
+
+</html>
