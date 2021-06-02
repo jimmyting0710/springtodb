@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,8 +36,11 @@ import com.example.demo.repository.ThisIsRepository;
 			repository.save(entity);
 			
 		}
-		public void find(ThisIsEntity entity) {
-			repository.findById(entity.getId());
+		public  Optional<ThisIsEntity> find(ThisIsEntity entity) {
+			//一定要return，不然東西沒辦法傳回去
+			return repository.findById(entity.getId());
 		}
+		
+		
 		
 }
