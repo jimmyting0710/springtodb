@@ -1,6 +1,9 @@
 package com.example.demo.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.springframework.stereotype.Component;
@@ -16,10 +19,29 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name = "test")
 public class ThisIsEntity {
+	
 	@Id
+	
 	private Integer id;
+	@Column
 	private String name;
+	@Column
 	private String phone;
+
+	
+	//要給個空的建構子
+	public ThisIsEntity() {
+		super();
+	}
+	
+	
+	public ThisIsEntity(Integer id, String name, String phone) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.phone = phone;
+	}
+
 
 	//以下是getters與setters
 	public int getId() {

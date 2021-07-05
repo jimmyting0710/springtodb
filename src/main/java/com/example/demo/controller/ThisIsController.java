@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.ThisIsEntity;
 import com.example.demo.service.ThisIsService;
@@ -27,11 +29,13 @@ public class ThisIsController {
 	 * 只要欲傳遞的屬性名在POJO類和前端表單name中對應即可。
 	 */
 	@GetMapping("/")
+	@ResponseBody
 	public String hi() {
 		return "index";
 	}
 
 	@GetMapping("/add")
+	@ResponseBody
 	public String hello(ThisIsEntity entity) {
 		entity.getId();
 		entity.getName();
